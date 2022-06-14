@@ -1,0 +1,50 @@
+To create account table in mysql :-
+
+create table assignment.account(id int not null unique auto_increment,
+transaction_date date not null,
+amount double not null,
+account_description varchar(50),
+primary key(id));
+
+To create receipt table:-
+create table assignment.receipt(id int not null auto_increment,
+receipt_date date not null,
+amount double not null,
+receipt_description varchar(50),
+primary key(id));
+
+Insert data into account table
+
+insert into assignment.account values(null,'2022-1-1',5000,"milk");
+insert into assignment.account values(null,'2022-2-1',6000,"corn");
+insert into assignment.account values(null,'2022-3-1',7000,"rice");
+insert into assignment.account values(null,'2022-4-1',8000,"meat");
+insert into assignment.account values(null,'2022-5-1',9000,"butter");
+insert into assignment.account values(null,'2022-6-1',10000,"peanut");
+insert into assignment.account values(null,'2022-7-1',11000,"bread");
+insert into assignment.account values(null,'2022-8-1',12000,"bread");
+insert into assignment.account values(null,'2022-9-1',13000,"bread");
+insert into assignment.account values(null,'2022-10-1',14000,"bread");
+
+Insert data into receipt table
+insert into assignment.receipt values(null,'2022-1-1',5000,"milk");
+insert into assignment.receipt values(null,'2022-2-1',6000,"corn");
+insert into assignment.receipt values(null,'2022-3-1',7000,"rice");
+insert into assignment.receipt values(null,'2022-4-1',8000,"meat");
+insert into assignment.receipt values(null,'2022-5-1',9000,"butter");
+
+To get all the records from account and receipt table whose amount are same and date
+
+select * from assignment.account a join
+assignment.receipt r
+on a.amount=r.amount
+WHERE a.account_description rlike  r.receipt_description
+
+To get all the records from account that doesn't exitst in receipt table
+
+select * from assignment.account a left join assignment.receipt r on a.amount=r.amount where r.id is null
+
+To get all the records from receipt table that doesn't exits in account table
+
+select * from assignment.receipt r left join assignment.account a on a.amount=r.amount where a.id is null
+
