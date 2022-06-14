@@ -8,52 +8,46 @@ package com.santosh.model;
 import java.util.Date;
 import java.util.Objects;
 
-/**
- *
- * @author santosh
- */
 public class Account {
+    private int id;
     private Date transactionDate;
     private Double amount;
     private String accountDescription;
 
-    public Account(Date transactionDate, Double amount, String accountDescription) {
+  
+
+  
+
+    public Account setId(int id) {
+        this.id = id;
+        return this;
+    }
+
+   
+    public Account setTransactionDate(Date transactionDate) {
         this.transactionDate = transactionDate;
+        return this;
+    }
+
+
+    public Account setAmount(Double amount) {
         this.amount = amount;
+        return this;
+    }
+
+
+    public Account setAccountDescription(String accountDescription) {
         this.accountDescription = accountDescription;
-    }
-
-    
-    public Date getTransactionDate() {
-        return transactionDate;
-    }
-
-    public void setTransactionDate(Date transactionDate) {
-        this.transactionDate = transactionDate;
-    }
-
-    public Double getAmount() {
-        return amount;
-    }
-
-    public void setAmount(Double amount) {
-        this.amount = amount;
-    }
-
-    public String getAccountDescription() {
-        return accountDescription;
-    }
-
-    public void setAccountDescription(String accountDescription) {
-        this.accountDescription = accountDescription;
+        return this;
     }
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 83 * hash + Objects.hashCode(this.transactionDate);
-        hash = 83 * hash + Objects.hashCode(this.amount);
-        hash = 83 * hash + Objects.hashCode(this.accountDescription);
+        int hash = 7;
+        hash = 29 * hash + this.id;
+        hash = 29 * hash + Objects.hashCode(this.transactionDate);
+        hash = 29 * hash + Objects.hashCode(this.amount);
+        hash = 29 * hash + Objects.hashCode(this.accountDescription);
         return hash;
     }
 
@@ -69,6 +63,9 @@ public class Account {
             return false;
         }
         final Account other = (Account) obj;
+        if (this.id != other.id) {
+            return false;
+        }
         if (!Objects.equals(this.accountDescription, other.accountDescription)) {
             return false;
         }
@@ -81,10 +78,14 @@ public class Account {
         return true;
     }
 
+    
     @Override
     public String toString() {
-        return "Account{" + "transactionDate=" + transactionDate + ", amount=" + amount + ", accountDescription=" + accountDescription + '}';
+        return "Account{" + "id=" + id + ", transactionDate=" + transactionDate + ", amount=" + amount + ", accountDescription=" + accountDescription + '}';
     }
+
+    
+
     
     
 }

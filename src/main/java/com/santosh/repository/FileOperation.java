@@ -11,28 +11,29 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.List;
 
 public class FileOperation {
 
-    public void appendIntoFile(ArrayList<ArrayList> list) {
-        String filePath = "/home/sagar/NetBeansProjects/mavenproject1/Assignments/output.csv";
+    public void appendIntoFile(List<ArrayList> list, String filePath) {
         try {
             File file = new File(filePath);
             if (!file.exists()) {
-             file=  createNewFile(filePath);
+                file.createNewFile();
             }
-            PrintWriter pw = new PrintWriter(file);
+            PrintWriter pw = new PrintWriter(filePath);
             for (ArrayList data : list) {
                 data.forEach((individualData) -> {
                     if (individualData != null) {
-                        pw.append(individualData.toString());
-                        pw.print(",");
+                        pw.write(individualData.toString());
+                        pw.write(",");
                     } else {
                         pw.print(",");
                     }
                 });
                 pw.println();
             }
+            pw.flush();
             pw.close();
 
         } catch (IOException e) {
