@@ -1,9 +1,7 @@
 
 package com.santosh.repository;
 
-import com.opencsv.CSVWriter;
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -35,11 +33,6 @@ public class FileOperation {
         } catch (IOException e) {
             System.out.println("file error " + e);
         }
-    }
-
-    private File createNewFile(String filePath) throws IOException {
-        CSVWriter csvFile = new CSVWriter(new FileWriter(filePath));
-        return new File(filePath);
     }
 
 }

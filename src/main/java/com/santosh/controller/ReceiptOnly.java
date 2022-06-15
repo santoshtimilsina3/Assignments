@@ -12,7 +12,7 @@ import java.util.List;
 
 
 public class ReceiptOnly extends DataFetch{
-    final String filePath="/home/sagar/NetBeansProjects/Assignments/receiptonly.csv";
+    private final String filePath="/home/sagar/NetBeansProjects/Assignments/receiptonly.csv";
     JdbcOperation jdbc=new JdbcOperation();
 
     @Override

@@ -9,7 +9,7 @@ import java.util.List;
 
 public class AccountOnly extends DataFetch{
 
-    String filePath = "/home/sagar/NetBeansProjects/Assignments/accountonly.csv";
+   private final String filePath = "/home/sagar/NetBeansProjects/Assignments/accountonly.csv";
     JdbcOperation jdbc = new JdbcOperation();
 
     @Override

@@ -9,7 +9,7 @@ import java.util.List;
 
 public class AllRecords extends DataFetch {
 
-    final String filePath = "/home/sagar/NetBeansProjects/Assignments/alltabledata.csv";
+    private final String filePath = "/home/sagar/NetBeansProjects/Assignments/alltabledata.csv";
     JdbcOperation jdbc = new JdbcOperation();
 
     @Override

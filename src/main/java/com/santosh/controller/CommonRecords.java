@@ -13,7 +13,7 @@ import java.util.List;
 
 public class CommonRecords extends DataFetch {
 
-     final String filePath = "/home/sagar/NetBeansProjects/Assignments/common.csv";
+     private final String filePath = "/home/sagar/NetBeansProjects/Assignments/common.csv";
     JdbcOperation jdbc = new JdbcOperation();
 
     @Override
