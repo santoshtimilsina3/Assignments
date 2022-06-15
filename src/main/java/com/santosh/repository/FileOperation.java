@@ -15,7 +15,7 @@ import java.util.List;
 
 public class FileOperation {
 
-    public void appendIntoFile(List<ArrayList> list, String filePath) {
+    public void WriteIntoFile(List<ArrayList> list, String filePath) {
         try {
             File file = new File(filePath);
             if (!file.exists()) {

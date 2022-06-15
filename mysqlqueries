@@ -31,7 +31,10 @@ insert into assignment.receipt values(null,'2022-1-1',5000,"milk");
 insert into assignment.receipt values(null,'2022-2-1',6000,"corn");
 insert into assignment.receipt values(null,'2022-3-1',7000,"rice");
 insert into assignment.receipt values(null,'2022-4-1',8000,"meat");
-insert into assignment.receipt values(null,'2022-5-1',9000,"butter");
+insert into assignment.receipt values(null,'2022-5-1',11000,"butter");
+insert into assignment.receipt values(null,'2022-11-01',9000,"oil");
+insert into assignment.receipt values(null,'2022-11-02',1200,"paper");
+insert into assignment.receipt values(null,'2022-11-03',1300,"water");
 
 To get all the records from account and receipt table whose amount are same and date
 
@@ -47,4 +50,8 @@ select * from assignment.account a left join assignment.receipt r on a.amount=r.
 To get all the records from receipt table that doesn't exits in account table
 
 select * from assignment.receipt r left join assignment.account a on a.amount=r.amount where a.id is null
+
+To get all data from the both tables
+
+SELECT * FROM account LEFT JOIN receipt  ON account.amount = receipt.amount UNION SELECT * FROM account RIGHT JOIN receipt ON account.amount = receipt.amount;
 
